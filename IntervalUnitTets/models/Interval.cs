@@ -3,7 +3,7 @@
 	private double min;
 	private double max;
 
-	public Interval(double min, double max)
+	public Interval(bool minOpen, double min, bool maxOpen, double max)
 	{
 		Test.Assert(min <= max);
 		this.min = min;
