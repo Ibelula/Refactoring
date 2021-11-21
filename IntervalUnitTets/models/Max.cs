@@ -2,17 +2,15 @@
 public class Max
 {
 	public double value;
-	public bool open;
+	protected bool open;
 
-	public Max(double value, bool open)
+	public Max(double value)
 	{
 		this.value = value;
-		this.open = open;
 	}
-	public bool greaterOrEquals(double value)
+
+	public bool isOnLeft(double value)
 	{
-		if (this.open)
-			return this.value > value;
-		return this.value >= value;
+		return this.value > value;
 	}
 }

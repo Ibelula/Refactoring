@@ -6,18 +6,18 @@ public class MaxTest
     [Test]
     public void givenMaxOpenedwhenGreaterWithLessValueThenTrue()
     {
-        Assert.True(new Max(4, true).greaterOrEquals(0.0));
+        Assert.True(new Max(4).isOnLeft(0.0));
     }
 
     [Test]
     public void givenMaxOpenedwhenGreaterWithGreaterValueThenFalse()
     {
-        Assert.False(new Max(4, true).greaterOrEquals(5.0));
+        Assert.False(new Max(4).isOnLeft(5.0));
     }
 
     [Test]
     public void givenMaxOpenedwhenGreaterWithEqualValueThenFalse()
     {
-        Assert.False(new Max(4, true).greaterOrEquals(4));
+        Assert.False(new Max(4).isOnLeft(4));
     }
 }

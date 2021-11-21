@@ -1,11 +1,10 @@
-﻿public class IncludedMax
+﻿public class IncludedMax : Max
 {
-    public IncludedMax(int i, bool b)
-    {
+  public IncludedMax(int value) : base(value) 
+    { 
     }
-
-    public bool greaterOrEquals(double value)
+    public bool isOnLeft(double value)
     {
-        return false;
+        return this.value >= value;
     }
 }

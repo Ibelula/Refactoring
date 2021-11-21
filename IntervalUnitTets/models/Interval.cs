@@ -12,6 +12,6 @@
 
 	public bool include(double value)
 	{
-		return this.min <= value && this.max.greaterOrEquals(value);
+		return this.min <= value && this.max.isOnLeft(value);
 	}
 }
