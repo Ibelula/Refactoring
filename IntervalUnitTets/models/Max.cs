@@ -9,7 +9,7 @@ public class Max
 		this.value = value;
 	}
 
-	public bool isOnLeft(double value)
+	public virtual bool isWithin(double value)
 	{
 		return this.value > value;
 	}

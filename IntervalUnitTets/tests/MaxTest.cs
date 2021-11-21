@@ -3,21 +3,46 @@ using FluentAssertions;
 using Moq;
 public class MaxTest
 {
-    [Test]
-    public void givenMaxOpenedwhenGreaterWithLessValueThenTrue()
+
+    protected static double VALUE = 4.4;
+    private static double DEVIATION = 0.1;
+
+    public Max createMax(double value)
     {
-        Assert.True(new Max(4).isOnLeft(0.0));
+        return new Max(value);
     }
 
     [Test]
-    public void givenMaxOpenedwhenGreaterWithGreaterValueThenFalse()
+    public void givenMaxWhenIsWithinWithLessValueThenTrue()
     {
-        Assert.False(new Max(4).isOnLeft(5.0));
+        Assert.True(createMax(VALUE).isWithin(less(VALUE)));
     }
 
     [Test]
-    public void givenMaxOpenedwhenGreaterWithEqualValueThenFalse()
+    public virtual void givenMaxWhenIsWithinWithEqualsValue()
     {
-        Assert.False(new Max(4).isOnLeft(4));
+        Assert.False(createMax(VALUE).isWithin(equals(VALUE)));
     }
+
+    [Test]
+    public void givenMaxWhenIsWithinWithGreaterValueThenTrue()
+    {
+        Assert.False(createMax(VALUE).isWithin(greater(VALUE)));
+    }
+
+    protected double less(double value)
+    {
+        return value - MaxTest.DEVIATION;
+    }
+
+    protected double equals(double value)
+    {
+        return value;
+    }
+
+    protected double greater(double value)
+    {
+        return value + MaxTest.DEVIATION;
+    }
+
 }

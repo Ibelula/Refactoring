@@ -1,23 +1,16 @@
 ﻿using Xunit;
 using FluentAssertions;
 using Moq;
-public class IncludedMaxTest
+public class IncludedMaxTest : MaxTest
 {
-    [Test]
-    public void givenMaxClosedwhenGreaterWithLessValueThenTrue()
+    public Max createMax(double value)
     {
-        Assert.True(new IncludedMax(4).isOnLeft(0.0));
+        return new ClosedMax(value);
     }
 
     [Test]
-    public void givenMaxClosedwhenGreaterWithGreaterValueThenFalse()
+    public override void givenMaxWhenIsWithinWithEqualsValue()
     {
-        Assert.False(new IncludedMax(4).isOnLeft(5.0));
-    }
-
-    [Test]
-    public void givenMaxClosedwhenGreaterWithEqualValueThenFalse()
-    {
-        Assert.True(new IncludedMax(4).isOnLeft(4));
+        Assert.True(createMax(VALUE).isWithin(equals(VALUE)));
     }
 }
