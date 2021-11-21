@@ -20,22 +20,4 @@ public class MaxTest
     {
         Assert.False(new Max(4, true).greaterOrEquals(4));
     }
-
-    [Test]
-  public void givenMaxClosedwhenGreaterWithLessValueThenTrue()
-    {
-        Assert.True(new Max(4, false).greaterOrEquals(0.0));
-    }
-
-    [Test]
-    public void givenMaxClosedwhenGreaterWithGreaterValueThenFalse()
-    {
-        Assert.False(new Max(4, false).greaterOrEquals(5.0));
-    }
-
-    [Test]
-    public void givenMaxClosedwhenGreaterWithEqualValueThenFalse()
-    {
-        Assert.True(new Max(4, false).greaterOrEquals(4));
-    }
 }
