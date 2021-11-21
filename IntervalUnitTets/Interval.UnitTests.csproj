@@ -92,8 +92,8 @@
     <Compile Include="models\Max.cs" />
     <Compile Include="models\Interval.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tets\Class1.cs" />
-    <Compile Include="tets\IntervalTest.cs" />
+    <Compile Include="tests\MaxTest.cs" />
+    <Compile Include="tests\IntervalTest.cs" />
     <Compile Include="XUnit.cs" />
   </ItemGroup>
   <ItemGroup>
