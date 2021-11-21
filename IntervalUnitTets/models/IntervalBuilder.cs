@@ -13,7 +13,7 @@ public class IntervalBuilder
 
     public IntervalBuilder open(double value)
     {
-        //assert !this.minConfigured || !this.maxConfigured;;
+        Test.Assert(!this.minConfigured || !this.maxConfigured);
         if (!this.minConfigured)
         {
             this.min = new Min(value);
@@ -29,7 +29,7 @@ public class IntervalBuilder
 
     public IntervalBuilder closed(double value)
     {
-        //assert !this.minConfigured || !this.maxConfigured;;
+        Test.Assert(!this.minConfigured || !this.maxConfigured);
         if (!this.minConfigured)
         {
             this.min = new ClosedMin(value);
@@ -45,7 +45,7 @@ public class IntervalBuilder
 
     public Interval build()
     {
-        //assert this.minConfigured && this.maxConfigured;
+        Test.Assert(this.minConfigured && this.maxConfigured);
         return new Interval(this.min, this.max);
     }
 }

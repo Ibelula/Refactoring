@@ -5,7 +5,7 @@ public class Interval
 
     public Interval(Min min, Max max)
     {
-        //assert min.value <= max.value;
+        Test.Assert(min.value <= max.value);
         this.min = min;
         this.max = max;
     }

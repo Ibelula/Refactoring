@@ -1,6 +1,6 @@
 public class Max
 {
-    protected double value;
+    public double value;
     public Max(double value)
     {
         this.value = value;
@@ -14,10 +14,7 @@ public class Max
     public override int GetHashCode()
     {
         const int prime = 31;
-        int result = 1;
-        long temp;
-        //temp = Double.doubleToLongBits(value);
-        //result = prime * result + (int)(temp ^ (temp >>> 32));
+        int result = 1;        
         return result;
     }
 
@@ -27,11 +24,7 @@ public class Max
             return true;
         if (obj == null)
             return false;
-        //if (getClass() != obj.getClass())
-        //return false;
         Max other = (Max)obj;
-        //if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
-        //return false;
         return true;
     }
 
