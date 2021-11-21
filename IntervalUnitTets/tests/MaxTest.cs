@@ -1,31 +1,40 @@
-﻿using Xunit;
-using FluentAssertions;
+using Xunit;
 using Moq;
+
 public class MaxTest
 {
-    protected Max max;
 
-    //@BeforeEach
+    protected Max max;
+    protected Point point;
+
+    [BeforeEach]
     public void before()
     {
-        this.max = new Max(NumberLine.VALUE);
+        this.point = new Point(4.4);
+        this.max = this.createMax();
+    }
+
+    protected virtual Max createMax()
+    {
+        return new Max(this.point.getEquals());
     }
 
     [Test]
     public void givenMaxWhenIsWithinWithLessValueThenTrue()
     {
-        Assert.True(this.max.isWithin(NumberLine.less(NumberLine.VALUE)));
+        Assert.True(this.max.isWithin(this.point.getLess()));
     }
 
     [Test]
     public virtual void givenMaxWhenIsWithinWithEqualsValue()
     {
-        Assert.False(this.max.isWithin(NumberLine.equals(NumberLine.VALUE)));
+        Assert.False(this.max.isWithin(this.point.getEquals()));
     }
 
     [Test]
     public void givenMaxWhenIsWithinWithGreaterValueThenTrue()
     {
-        Assert.False(this.max.isWithin(NumberLine.greater(NumberLine.VALUE)));
+        Assert.False(this.max.isWithin(this.point.getGreater()));
     }
+
 }

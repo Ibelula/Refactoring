@@ -1,32 +1,41 @@
-﻿using Xunit;
-using FluentAssertions;
+using Xunit;
 using Moq;
+
 public class MinTest
 {
 
     protected Min min;
+    protected Point point;
 
-    //@BeforeEach
+    [BeforeEach]
     public void before()
     {
-        this.min = new Min(NumberLine.VALUE);
+        this.point = new Point(4.4);
+        this.min = this.createMin();
+    }
+
+    protected virtual Min createMin()
+    {
+        return new Min(this.point.getEquals());
     }
 
     [Test]
     public void givenMinWhenIsWithinWithLessValueThenTrue()
     {
-        Assert.False(this.min.isWithin(NumberLine.less(NumberLine.VALUE)));
+        Assert.False(this.min.isWithin(this.point.getLess()));
     }
 
     [Test]
     public virtual void givenMinWhenIsWithinWithEqualsValue()
     {
-        Assert.False(this.min.isWithin(NumberLine.equals(NumberLine.VALUE)));
+        Assert.False(this.min.isWithin(this.point.getEquals()));
     }
 
     [Test]
     public void givenMinWhenIsWithinWithGreaterValueThenTrue()
     {
-        Assert.True(this.min.isWithin(NumberLine.greater(NumberLine.VALUE)));
+        Assert.True(this.min.isWithin(this.point.getGreater()));
     }
+
 }
+
