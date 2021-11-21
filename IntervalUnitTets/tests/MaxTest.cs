@@ -3,46 +3,30 @@ using FluentAssertions;
 using Moq;
 public class MaxTest
 {
+    private static double VALUE;
+    protected Max max;
 
-    protected static double VALUE = 4.4;
-    private static double DEVIATION = 0.1;
-
-    public Max createMax(double value)
+    //@BeforeEach
+    public void before()
     {
-        return new Max(value);
+        this.max = new Max(NumberLine.VALUE);
     }
 
     [Test]
     public void givenMaxWhenIsWithinWithLessValueThenTrue()
     {
-        Assert.True(createMax(VALUE).isWithin(less(VALUE)));
+        Assert.True(this.max.isWithin(NumberLine.less(VALUE)));
     }
 
     [Test]
     public virtual void givenMaxWhenIsWithinWithEqualsValue()
     {
-        Assert.False(createMax(VALUE).isWithin(equals(VALUE)));
+        Assert.False(this.max.isWithin(NumberLine.equals(VALUE)));
     }
 
     [Test]
     public void givenMaxWhenIsWithinWithGreaterValueThenTrue()
     {
-        Assert.False(createMax(VALUE).isWithin(greater(VALUE)));
+        Assert.False(this.max.isWithin(NumberLine.greater(VALUE)));
     }
-
-    protected double less(double value)
-    {
-        return value - MaxTest.DEVIATION;
-    }
-
-    protected double equals(double value)
-    {
-        return value;
-    }
-
-    protected double greater(double value)
-    {
-        return value + MaxTest.DEVIATION;
-    }
-
 }

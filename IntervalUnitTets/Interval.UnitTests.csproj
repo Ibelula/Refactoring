@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\NumberLine.cs" />
     <Compile Include="models\ClosedMax.cs" />
     <Compile Include="models\IncludedMax.cs" />
     <Compile Include="models\Max.cs" />
