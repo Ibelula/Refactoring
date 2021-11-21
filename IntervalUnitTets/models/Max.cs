@@ -7,6 +7,6 @@ public class Max
 
 	public bool greater(double d)
 	{
-		return false;
+		return true;
 	}
 }
