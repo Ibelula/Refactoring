@@ -1,21 +1,17 @@
 ﻿public class Interval
 {
 	private double min;
-	private double max;
-	private bool maxOpen;
+	private Max max;
 
-	public Interval(bool minOpen, double min, bool maxOpen, double max)
+	public Interval(bool minOpen, double min, Max max)
 	{
-		Test.Assert(min <= max);
+		Test.Assert(min <= max.value);
 		this.min = min;
 		this.max = max;
-		this.maxOpen = maxOpen;
 	}
 
 	public bool include(double value)
 	{
-		if (this.maxOpen)
-			return this.min <= value && value < this.max;
-		return this.min <= value && value <= this.max;		
+		return this.min <= value && this.max.greaterOrEquals(value);
 	}
 }

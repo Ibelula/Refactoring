@@ -1,19 +1,18 @@
 ﻿
 public class Max
 {
-	private double value;
-	private bool open;
+	public double value;
+	public bool open;
 
-	public Max(bool b, int i)
+	public Max(double value, bool open)
 	{
-		this.value = i;
-		this.open = b;
+		this.value = value;
+		this.open = open;
 	}
-
-	public bool greater(double d)
+	public bool greaterOrEquals(double value)
 	{
 		if (this.open)
-			return this.value > d;
-		return this.value >= d;
+			return this.value > value;
+		return this.value >= value;
 	}
 }
