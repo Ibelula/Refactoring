@@ -3,14 +3,15 @@
 	private double min;
 	private double max;
 
-	public Interval(double d, double e)
+	public Interval(double min, double max)
 	{
-		this.min = d;
-		this.max = e;
+		Test.Assert(min <= max);
+		this.min = min;
+		this.max = max;
 	}
 
-	public bool include(double d)
+	public bool include(double value)
 	{
-		return this.min <= d && d <= this.max;		
+		return this.min <= value && value <= this.max;		
 	}
 }
