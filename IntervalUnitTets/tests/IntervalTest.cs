@@ -4,7 +4,7 @@ using Moq;
 public class IntervalTest
 {
     [Test]
-    public void givenIntervalwhenIncludeWithIncludedValueThenTrue()
+    public void givenMaxwhenGreaterWithLessValueThenTrue()
     {
         Assert.True(new Interval(true, -1.7, true, 5555.0).include(0.0));
     }
