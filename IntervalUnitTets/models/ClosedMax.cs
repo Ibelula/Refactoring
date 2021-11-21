@@ -7,6 +7,6 @@
 
     public override bool isWithin(double value)
     {
-        return this.value >= value;
+        return base.isWithin(value) || this.value == value;
     }
 }
