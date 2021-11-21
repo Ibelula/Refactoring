@@ -19,7 +19,7 @@ public class MinTest
     }
 
     [Test]
-    public void givenMinWhenIsWithinWithEqualsValue()
+    public virtual void givenMinWhenIsWithinWithEqualsValue()
     {
         Assert.False(this.min.isWithin(NumberLine.equals(NumberLine.VALUE)));
     }

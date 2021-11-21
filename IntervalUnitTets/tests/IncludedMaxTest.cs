@@ -1,7 +1,7 @@
 ﻿using Xunit;
 using FluentAssertions;
 using Moq;
-public class IncludedMaxTest : MaxTest
+public class ClosedMaxTest : MaxTest
 {    
     public Max createMax(double value)
     {
