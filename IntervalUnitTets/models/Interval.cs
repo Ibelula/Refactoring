@@ -12,6 +12,6 @@ public class Interval
 
 	public bool include(double d)
 	{
-		return false;
+		return true;
 	}
 }
