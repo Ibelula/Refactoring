@@ -4,9 +4,6 @@ using FluentAssertions;
 using Moq;
 public class ClosedMinTest : MinTest
 {
-
-    //@Override
-  //@BeforeEach
   public void before()
     {
         this.min = new ClosedMin(NumberLine.VALUE);

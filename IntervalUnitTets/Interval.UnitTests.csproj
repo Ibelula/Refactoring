@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\Point.cs" />
     <Compile Include="models\ClosedMin.cs" />
     <Compile Include="models\Min.cs" />
     <Compile Include="models\NumberLine.cs" />
@@ -97,7 +98,7 @@
     <Compile Include="models\Max.cs" />
     <Compile Include="models\Interval.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tests\Class1.cs" />
+    <Compile Include="tests\ClosedMinTest.cs" />
     <Compile Include="tests\MinTest.cs" />
     <Compile Include="tests\IncludedMaxTest.cs" />
     <Compile Include="tests\MaxTest.cs" />
